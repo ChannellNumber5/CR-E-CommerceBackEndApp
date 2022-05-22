@@ -12,8 +12,6 @@ router.get('/', async (req, res) => {
   } catch (err){
       res.status(500).json(err);
   }
-  // find all tags
-  // be sure to include its associated Product data
 });
 
 router.get('/:id', async (req, res) => {
@@ -25,7 +23,6 @@ router.get('/:id', async (req, res) => {
   } catch (err){
       res.status(500).json(err);
   }
-  // be sure to include its associated Product data
 });
 
 router.post('/', (req, res) => {
@@ -67,7 +64,6 @@ router.delete('/:id', (req, res) => {
     res.json(deletedTag);
   })
   .catch((err) => res.json(err));
-  // delete on tag by its `id` value
 });
 
 module.exports = router;
