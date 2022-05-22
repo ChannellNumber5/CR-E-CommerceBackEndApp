@@ -49,8 +49,11 @@ router.put('/:id', (req, res) => {
       where: {
         id: req.params.id,
       },
-    }
-  )
+    })
+    .then((updatedProduct) => {
+      res.status(200).json(updatedProduct);
+  })
+  .catch((err) => res.json(err));
 });
 
 router.delete('/:id', (req, res) => {
